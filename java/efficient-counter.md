@@ -2,34 +2,36 @@
 
 First of all, We need to define a mutable class name **MutableInteger** with lombok annotation
 
-	@AllArgsConstructor
-	class MutableInteger {
-		@Getter	
-		@Setter	
-		private int val;
-	}
 
+```java
+@AllArgsConstructor
+class MutableInteger {
+	@Getter	
+	@Setter	
+	private int val;
+}
+```
 Secondly, the counter is improved and changed to the following:
-
-	HashMap<String, MutableInteger> efficientCounter = new HashMap<String, MutableInteger>();
+```java
+HashMap<String, MutableInteger> efficientCounter = new HashMap<String, MutableInteger>();
  
-	for (String word : words) {
-		MutableInteger initValue = new MutableInteger(1);
-		MutableInteger oldValue = efficientCounter.put(word, initValue);
+for (String word : words) {
+	MutableInteger initValue = new MutableInteger(1);
+	MutableInteger oldValue = efficientCounter.put(word, initValue);
  
-		if(oldValue != null){
-			initValue.set(oldValue.get() + 1);
-		}
+	if(oldValue != null){
+		initValue.set(oldValue.get() + 1);
 	}
-
+}
+```
 ----------
 
 But in **java 8**, you can write a counter simply.
-
-	String[] array = {"program", "creek", "program", "creek", "java", "web", "program"};
-	Stream<String> stream = Stream.of(array).parallel();
-	Map<String, Long> counter = stream.collect(Collectors.groupingBy(String::toString, Collectors.counting()));
-
+```java
+String[] array = {"program", "creek", "program", "creek", "java", "web", "program"};
+Stream<String> stream = Stream.of(array).parallel();
+Map<String, Long> counter = stream.collect(Collectors.groupingBy(String::toString, Collectors.counting()));
+```	
 
 **Reference**
 
