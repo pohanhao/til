@@ -3,8 +3,7 @@ Today I Learned
 
 ### Categories
 
-* Java Basic
-
+* [Java Basic](#java-basic)
 
 
 ----------
