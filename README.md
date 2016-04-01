@@ -10,3 +10,4 @@ Today I Learned
 
 ### Java Basic
 1. [Efficient Counter](./java/efficient-counter.md)
+2. [Java8-Optional](./java/java8-optional.md)
