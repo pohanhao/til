@@ -3,7 +3,7 @@ Today I Learned
 
 ### Categories
 
-* [Design Pattern](#java-basic)
+* [Design Pattern](#design-pattern)
 * [Java Basic](#java-basic)
 
 
