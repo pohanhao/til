@@ -1,5 +1,6 @@
 # Abstract Factory pattern
 
+create an interface or abstract class for factory
 ```java
 public interface OfficeFactory {
 
@@ -10,6 +11,7 @@ public interface OfficeFactory {
 }
 ```
 
+create concrete class
 ```java
 class WinWord implements Word {
 
@@ -28,6 +30,7 @@ class MacWord implements Word {
 }
 ```
 
+create concrete factory 
 ```java
 public class WinFactory implements OfficeFactory {
 
@@ -48,15 +51,16 @@ public class MacFactory implements OfficeFactory {
 }
 ```
 
+demo: display content by platform factory
 ```java
 public class AbstractFactoryDemo {
 
     public static void main(String[] args) {
         OfficeFactory winFactory = new WinFactory();
-        winFactory.createWord();
+        Word winWord = winFactory.createWord();
 
         OfficeFactory macFactory = new MacFactory();
-        macFactory.createWord();
+        Word macWord = macFactory.createWord();
     }
 }
 ```
