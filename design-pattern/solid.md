@@ -1,4 +1,4 @@
-# SOLID Design principle
+# S.O.L.I.D Design principle
 
 ### Single Responsibility Principle
 
