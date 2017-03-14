@@ -16,6 +16,64 @@
 
 > "Clients should not be forced to implement unnecessary methods which they will not use"
 
+```java
+public interface Behavior {
+
+    void fly();
+
+    void run();
+
+    void swim();
+}
+```
+
+```java
+public abstract class Animal implements Behavior {
+  // some logic
+}
+```
+
+```java
+public class Bird extends Animal {
+    @Override
+    public void fly() {
+        System.out.println("I can fly.");
+    }
+    @Override
+    public void run() {
+        new IllegalAccessError("I can't run");
+    }
+    @Override
+    public void swim() {
+        new IllegalAccessError("I can't swim");
+    }
+}
+```
+
+refactor to this
+```java
+public abstract class Animal {
+  // some logic
+}
+```
+
+```java
+public interface FlyBehavior {
+
+    void fly();
+}
+```
+
+```java
+public class Bird extends Animal implements FlyBehavior {
+    @Override
+    public void fly() {
+        System.out.println("I can fly.");
+
+    }
+}
+```
+
 ### Dependency Inversion Principle
 
 > "Depend on abstractions, not on concretions"
