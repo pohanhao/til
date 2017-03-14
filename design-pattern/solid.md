@@ -41,16 +41,17 @@ public class Bird extends Animal {
     }
     @Override
     public void run() {
-        new IllegalAccessError("I can't run");
+        throw new IllegalAccessError("I can't run");
     }
     @Override
     public void swim() {
-        new IllegalAccessError("I can't swim");
+        throw new IllegalAccessError("I can't swim");
     }
 }
 ```
 
 refactor to this
+
 ```java
 public abstract class Animal {
   // some logic
@@ -69,7 +70,6 @@ public class Bird extends Animal implements FlyBehavior {
     @Override
     public void fly() {
         System.out.println("I can fly.");
-
     }
 }
 ```
