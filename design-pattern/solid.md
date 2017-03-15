@@ -16,7 +16,7 @@
 
 > "Clients should not be forced to implement unnecessary methods which they will not use"
 
-[example](#isp example)
+[example](#isp-example)
 
 ### Dependency Inversion Principle
 
