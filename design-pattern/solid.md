@@ -22,6 +22,8 @@
 
 > "Depend on abstractions, not on concretions"
 
+---
+
 #### ISP Example
 
 ```java
