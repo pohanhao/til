@@ -16,6 +16,14 @@
 
 > "Clients should not be forced to implement unnecessary methods which they will not use"
 
+[example](#isp example)
+
+### Dependency Inversion Principle
+
+> "Depend on abstractions, not on concretions"
+
+#### ISP Example
+
 ```java
 public interface Behavior {
 
@@ -73,10 +81,6 @@ public class Bird extends Animal implements FlyBehavior {
     }
 }
 ```
-
-### Dependency Inversion Principle
-
-> "Depend on abstractions, not on concretions"
 
 
 **Reference**
