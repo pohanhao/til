@@ -35,7 +35,7 @@ public class AlarmApplication {
         sendEmail("from", "to");
     }
 
-    public void sendEmail(String from, List<String> toAddresses) {
+    private void sendEmail(String from, List<String> toAddresses) {
         // some logic
     }
 }
@@ -51,7 +51,7 @@ public class AlarmApplication {
         sendMessage("from", "to");
     }
 
-    public void sendMessage(String from, List<String> toAddresses) {
+    private void sendMessage(String from, List<String> toAddresses) {
         emailService.send(from, toAddresses);
     }
 }
@@ -60,7 +60,7 @@ public class AlarmApplication {
 ```java
 public class EmailService {
     
-    void send(String from, List<String> toAddresses) {
+    public void send(String from, List<String> toAddresses) {
         // some logic
     }
 }
