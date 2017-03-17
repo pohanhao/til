@@ -32,7 +32,7 @@
 public class AlarmApplication {
 
     public void trigger() {
-        sendEmail("from", "to");
+        sendEmail("from", toAddresses);
     }
 
     private void sendEmail(String from, List<String> toAddresses) {
@@ -48,7 +48,7 @@ public class AlarmApplication {
     private EmailService emailService = new EmailService();
 
     public void trigger() {
-        sendMessage("from", "to");
+        sendMessage("from", toAddresses);
     }
 
     private void sendMessage(String from, List<String> toAddresses) {
