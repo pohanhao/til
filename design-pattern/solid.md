@@ -4,6 +4,8 @@
 
 > "One class should have one and only one responsibility"
 
+[example](#srp-example)
+
 ### Open Closed Principle
 
 > "Software components should be open for extension, but closed for modification"
@@ -23,6 +25,46 @@
 > "Depend on abstractions, not on concretions"
 
 ---
+
+#### SRP Example
+
+```java
+public class AlarmApplication {
+
+    public void trigger() {
+        sendEmail("from", "to");
+    }
+
+    public void sendEmail(String from, List<String> toAddresses) {
+        // some logic
+    }
+}
+```
+
+refactor to this
+
+```java
+public class AlarmApplication {
+    EmailService emailService = new EmailService();
+
+    public void trigger() {
+        sendMessage("from", "to");
+    }
+
+    public void sendMessage(String from, List<String> toAddresses) {
+        emailService.send(from, toAddresses);
+    }
+}
+```
+
+```java
+public class EmailService {
+    
+    void send(String from, List<String> toAddresses) {
+        // some logic
+    }
+}
+```
 
 #### ISP Example
 
