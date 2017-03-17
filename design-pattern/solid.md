@@ -24,6 +24,8 @@
 
 > "Depend on abstractions, not on concretions"
 
+[example](#dip-example)
+
 ---
 
 #### SRP Example
@@ -67,7 +69,7 @@ public class EmailService {
 ```
 
 #### ISP Example
-
+ 
 ```java
 public interface Behavior {
 
@@ -126,6 +128,46 @@ public class Bird extends Animal implements FlyBehavior {
 }
 ```
 
+#### DIP Example
+
+```java
+public interface MessageService {
+    void send(String from, List<String> toAddresses);
+}
+```
+
+```java
+public class EmailService implements MessageService {
+    
+    public void send(String from, List<String> toAddresses) {
+        // some logic
+    }
+}
+```
+
+```java
+public class InstantMessageService implements MessageService {
+    
+    public void send(String from, List<String> toAddresses) {
+        // some logic
+    }
+}
+```
+
+```java
+public class AlarmApplication {
+    
+    private MessageService messageService;
+    
+    public AlarmApplication(MessageService messageService) {
+        this.messageService = messageService;
+    }
+
+    public void trigger() {
+        messageService.send("from", toAddresses);
+    }
+}
+```
 
 **Reference**
 
