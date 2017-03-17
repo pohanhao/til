@@ -45,7 +45,7 @@ refactor to this
 
 ```java
 public class AlarmApplication {
-    EmailService emailService = new EmailService();
+    private EmailService emailService = new EmailService();
 
     public void trigger() {
         sendMessage("from", "to");
