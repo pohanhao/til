@@ -9,3 +9,4 @@
 5. https://dotblogs.com.tw/pin0513/2010/03/14/14017
 6. https://blog.jason.party/4/command-pattern
 7. http://design-patterns.readthedocs.io/zh_CN/latest/behavioral_patterns/command.html
+8. http://alvinalexander.com/java/java-command-design-pattern-in-java-examples
