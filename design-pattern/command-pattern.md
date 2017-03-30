@@ -67,6 +67,14 @@ public static void main(String[] args) {
 refactor to this
 
 ```java
+@FunctionalInterface
+public interface Command {
+
+    void execute();
+}
+```
+
+```java
 public class RemoteControl {
 
     private Command command;
