@@ -1,5 +1,115 @@
 # Command pattern
 
+```java
+public class Light {
+
+    public void on() {
+        System.out.println("light on");
+    }
+
+    public void off() {
+        System.out.println("light off");
+    }
+}
+```
+
+```java
+public class AmazonEcho {
+
+    private Light light;
+
+    public AmazonEcho(Light light) {
+        this.light = light;
+    }
+
+    public void lightOn() {
+        light.on();
+    }
+
+    public void lightOff() {
+        light.off();
+    }
+}
+
+```
+
+```java
+public class RemoteControl {
+
+    private Light light;
+
+    public RemoteControl(Light light) {
+        this.light = light;
+    }
+
+    public void lightOn() {
+        light.on();
+    }
+
+    public void lightOff() {
+        light.off();
+    }
+}
+```
+
+```java
+public static void main(String[] args) {
+    Light doorLight = new Light();
+
+    RemoteControl remoteControl = new RemoteControl(doorLight);
+    remoteControl.lightOn();
+
+    AmazonEcho amazonEcho = new AmazonEcho(doorLight);
+    amazonEcho.lightOff();
+}
+```
+
+refactor to this
+
+```java
+public class RemoteControl {
+
+    private Command command;
+
+    public void setCommand(Command command) {
+        this.command = command;
+    }
+
+    public void press() {
+        command.execute();
+    }
+}
+```
+
+```java
+public class AmazonEcho {
+
+    private Command command;
+
+    public void setCommand(Command command) {
+        this.command = command;
+    }
+
+    public void alexa() {
+        command.execute();
+    }
+}
+```
+
+```java
+public static void main(String[] args) {
+    Light doorLight = new Light();
+
+    RemoteControl remoteControl = new RemoteControl();
+    remoteControl.setCommand(new LightOnCommand(doorLight));
+    remoteControl.press();
+
+    AmazonEcho amazonEcho = new AmazonEcho();
+    amazonEcho.setCommand(new LightOffCommand(doorLight));
+    amazonEcho.alexa();
+}
+```
+
 **Reference**
 
 1. https://openhome.cc/Gossip/DesignPattern/CommandPattern.htm
