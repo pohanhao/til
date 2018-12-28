@@ -10,6 +10,7 @@
 - rds
 
 ### Networking & Content Delivery
+- vpc (az, subnet)
 - elb
 
 ### Management
