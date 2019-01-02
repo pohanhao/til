@@ -1,5 +1,43 @@
 # Aspect Oriented Programming
 
+## Introduction
+1. [Proxy Desing Pattern](https://github.com/pohanhao/til/blob/master/design-pattern/proxy-pattern.md)
+2. InvocationHandler in java.lang.reflect
+3. AspectJ Example (compile time weaving)
+4. Guice and Spring Example
+
+### InvocationHandler
+
+```java
+public class LoggingProxy implements InvocationHandler {    
+    private Object target;
+    private Logger logger;
+
+    public LoggingProxy(Object target) {
+        this.target = target;
+        logger = Logger.getLogger(target.getClass().getName());
+    }
+
+    public Object invoke(Object proxy, Method method, 
+                         Object[] args) throws Throwable { 
+        Object result = null; 
+        try { 
+            logger.info(String.format("%s.%s(%s)",
+                    target.getClass().getName(), method.getName(), Arrays.toString(args)));
+            result = method.invoke(target, args);
+        } catch (IllegalAccessException | IllegalArgumentException | 
+                InvocationTargetException e){ 
+            throw new RuntimeException(e);
+        }
+        return result; 
+    } 
+}
+```
+
+
+## Terms
+Cross-cutting concerns, Aspect, Advice, Joinpoint, Pointcut, Target, Weave
+
 ## Guice Example
 
 ```java
