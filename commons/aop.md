@@ -36,7 +36,7 @@ public class LoggingProxy implements InvocationHandler {
 
 
 ## Terms
-Cross-cutting concerns, Aspect, Advice, Joinpoint, Pointcut, Target, Weave
+Cross-cutting concerns, Aspect, Advice, Joinpoint, Pointcut, Weave
 
 ## Guice Example
 
