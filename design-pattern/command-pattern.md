@@ -1,6 +1,6 @@
 # Command pattern
 
-> Encapsulate a request as a object, thereby let you to parameterize other objects with different requests, queue or log request, and support undo operation
+Encapsulate a request as a object, thereby let you to parameterize other objects with different requests, queue or log request, and support undo operation
 
 ```java
 public class Light {
