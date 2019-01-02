@@ -1,6 +1,6 @@
 # Aspect Oriented Programming
 
-## Guice AOP Example
+## Guice Example
 
 ```java
 @Retention(RetentionPolicy.RUNTIME) @Target(ElementType.METHOD)
@@ -46,7 +46,26 @@ Exception in thread "main" java.lang.IllegalStateException: chargeOrder not allo
 	at com.publicobject.pizza.WeekendExample.main(WeekendExample.java:47)
 ```
 
+### Spring Example
+```java
+@Component
+@Aspect
+public class LoggingAspect {
+    @Before("execution(* cc.openhome.model.AccountDAO.*(..))")
+    public void before(JoinPoint joinPoint) {   
+        Object target = joinPoint.getTarget();
+        String methodName = joinPoint.getSignature().getName();
+        Object[] args = joinPoint.getArgs();
+        Logger.getLogger(target.getClass().getName())
+              .info(String.format("%s.%s(%s)",
+                target.getClass().getName(), methodName, Arrays.toString(args)));
+    }
+}
+```
 
 **Reference**
 
 1. https://github.com/google/guice/wiki/AOP
+2. https://openhome.cc/Gossip/SpringGossip/AOPConcept.html
+3. https://openhome.cc/Gossip/Spring/AspectJ.html
+4. https://openhome.cc/Gossip/Spring/SpringAOP.html
