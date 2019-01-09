@@ -27,6 +27,21 @@ Calls to broken services failfast, Offloads broken services
 ### Bulkheads
 Isolates components, Prevents cascading
 
+```java
+Semaphore bulkhead = new Semaphore(2);
+Offers protectedGetOffers() {
+  if (bulkhead.tryAcquire(0, TimeUnit.SECONDS)) {
+    try {
+      returnspecialOffers.getOffers();
+    } finally {
+      bulkhead.release();
+    }
+  } else {
+    throw new RejectedByBulkheadException();
+  }
+}
+```
+
 ### Thread Pool Handovers
 Thread Pool Handovers, Calling threads can always walk away, Generic timeouts
 
