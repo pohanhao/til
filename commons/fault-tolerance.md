@@ -68,3 +68,4 @@ Timeout rate, Rejected call rate, Short circuit rate, Failure/success rate, Resp
 2. https://www.slideshare.net/KristofferErlandsson/building-fault-tolerant-microservices
 3. https://www.youtube.com/watch?v=T9MPDmw6MNI
 4. https://www.slideshare.net/ufried/patterns-of-resilience
+5. https://blog.risingstack.com/designing-microservices-architecture-for-failure/
