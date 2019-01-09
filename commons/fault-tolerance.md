@@ -69,3 +69,4 @@ Timeout rate, Rejected call rate, Short circuit rate, Failure/success rate, Resp
 3. https://www.youtube.com/watch?v=T9MPDmw6MNI
 4. https://www.slideshare.net/ufried/patterns-of-resilience
 5. https://blog.risingstack.com/designing-microservices-architecture-for-failure/
+6. https://docs.microsoft.com/en-us/azure/architecture/patterns/bulkhead
