@@ -31,7 +31,7 @@ Isolates components, Prevents cascading
 Thread Pool Handovers, Calling threads can always walk away, Generic timeouts
 
 ```java
-ExecutorService executor= new ThreadPoolExecutor(3, 3, 1, TimeUnit.MINUTES, new SynchronousQueue<>());
+ExecutorService executor = new ThreadPoolExecutor(3, 3, 1, TimeUnit.MINUTES, new SynchronousQueue<>());
 Offers protectedGetOffers() {
 try {
     Future<Offers> future = executor.submit(specialOffers::getOffers);
