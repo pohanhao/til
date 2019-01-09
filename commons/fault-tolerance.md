@@ -32,7 +32,7 @@ Semaphore bulkhead = new Semaphore(2);
 Offers protectedGetOffers() {
   if (bulkhead.tryAcquire(0, TimeUnit.SECONDS)) {
     try {
-      returnspecialOffers.getOffers();
+      return specialOffers.getOffers();
     } finally {
       bulkhead.release();
     }
